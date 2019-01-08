@@ -55,13 +55,13 @@ class Tickers extends React.Component {
 
   fetchCryptocurrencyData() {
     axios.get("https://api.coinmarketcap.com/v1/ticker/?limit=10")
-      .then(response => {
-        var wanted = ["bitcoin", "ethereum", "litecoin", "tether"];
-        console.log(response.data);
-        var result = response.data.filter(currency => wanted.includes(currency.id));
-        this.setState({ data : result });
-      })
-      .catch(err => console.error(err));
+    .then(response => {
+      var wanted = ["bitcoin", "ethereum", "litecoin", "tether"];
+      console.log(response.data);
+      var result = response.data.filter(currency => wanted.includes(currency.id));
+      this.setState({ data : result });
+    })
+    .catch(err => console.error(err));
   }
 
   render() {
